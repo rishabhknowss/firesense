@@ -18,7 +18,7 @@ export const Home = () => {
             </div>
             <div>Empowering People</div>
           </div>
-          <div className="absolute inset-0 flex items-center justify-center mt-3 ml-5 invisible  md:visible">
+          <div className="absolute w-full h-full ml-20 inset-0 flex items-center justify-center mt-3  invisible  md:visible">
             <img 
               src={map} 
               alt="Coverage map" 

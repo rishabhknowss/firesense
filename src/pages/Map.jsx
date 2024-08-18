@@ -39,7 +39,7 @@ export const Map = () => {
         <div className="bg-white p-6 w-80 shadow-2xl rounded-3xl space-y-4">
           <div className="text-2xl font-medium">Hello, Firefighter</div>
           <div className="space-y-4">
-            <div className="border-2 flex p-2 rounded-2xl">
+            <div className="border-2 flex p-2 rounded-2xl  ">
               <input
                 className="flex-grow border-none outline-none text-lg"
                 placeholder="Search"
