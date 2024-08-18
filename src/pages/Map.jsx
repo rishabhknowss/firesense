@@ -28,15 +28,14 @@ export const Map = () => {
 
   return (
     <div
-      className="bg-cover bg-center h-screen w-screen p-4 relative "
+      className="bg-cover bg-center h-screen w-screen p-4 md:relative "
       style={{ backgroundImage: `url(${map})` }}
     >
-      
-      <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-md">
+      <div className="md:absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-md">
         Vasai-Virar Fire Department
       </div>
 
-      <div className="p-6 flex">
+      <div className="p-6 flex mt-10 md:mt-0">
         <div className="bg-white p-6 w-80 shadow-2xl rounded-3xl space-y-4">
           <div className="text-2xl font-medium">Hello, Firefighter</div>
           <div className="space-y-4">

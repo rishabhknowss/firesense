@@ -33,7 +33,7 @@ export const LoginCard = () => {
         Hello, <span className="text-red-600">Welcome</span>
       </div>
       <div className="grid px-3 my-4">
-        <div className="grid grid-cols-3 text-sm gap-4">
+        <div className="grid grid-cols-3 text-sm gap-3">
           <div
             className={`grid justify-center gap-2 cursor-pointer ${
               selected === "firedepartment" ? "border-black" : "border-gray-50"
@@ -49,7 +49,7 @@ export const LoginCard = () => {
             >
               <img src={firedepartment} alt="Fire Department" />
             </div>
-            <div className="flex justify-center">Fire Department</div>
+            <div className="flex items-center justify-center">Fire Department</div>
           </div>
 
           <div
@@ -61,7 +61,7 @@ export const LoginCard = () => {
             onClick={() => handleSelect("intergratedpartner")}
           >
             <div
-              className={`border-2 w-fit p-2 rounded-full ml-2 ${
+              className={`border-2 w-fit p-2 rounded-full ml-4 ${
                 selected === "intergratedpartner"
                   ? "border-black shadow-xl"
                   : "border-gray-200"
@@ -69,7 +69,7 @@ export const LoginCard = () => {
             >
               <img src={intergratedpartner} alt="Integrated Partner" />
             </div>
-            <div className="flex justify-center">Integrated Partner</div>
+            <div className="flex items-center  justify-center">Integrated Partner</div>
           </div>
 
           <div
@@ -79,13 +79,13 @@ export const LoginCard = () => {
             onClick={() => handleSelect("individual")}
           >
             <div
-              className={`border-2 w-fit p-2 rounded-full ml-2 ${
+              className={` flex justify-center border-2 w-fit px-3 md:p-2  rounded-full ml-2 ${
                 selected === "individual" ? "border-black shadow-xl" : "border-gray-200"
               }`}
             >
               <img src={individual} alt="Individual" />
             </div>
-            <div className="flex justify-center">Individual</div>
+            <div className="flex items-center justify-center">Individual</div>
           </div>
         </div>
         <div className="my-4">

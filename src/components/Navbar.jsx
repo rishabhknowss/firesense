@@ -42,10 +42,12 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center p-6 text-md">
-      <img src={logo} alt="logo" />
+    <div className="flex justify-between items-center p-4 md:p-6 text-md">
+      {/* Logo with increased size */}
+      <img src={logo} alt="logo"  />  {/* Adjusted height */}
 
-      <div className="hidden md:flex space-x-8">
+      {/* Navbar Items */}
+      <div className="hidden md:flex space-x-8 flex-grow justify-center">
         {NavbarItems.map((item) => (
           <div
             key={item.label}
@@ -59,12 +61,14 @@ export const Navbar = () => {
         ))}
       </div>
 
+      {/* Contact Us button */}
       <div className="hidden md:flex cursor-pointer">
         <div className="border px-4 py-2 rounded-xl text-white bg-black text-md">
           Contact Us
         </div>
       </div>
 
+      {/* Mobile Menu Icon */}
       <div className="md:hidden flex items-center">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? (
@@ -75,6 +79,7 @@ export const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-4 py-4 md:hidden">
           {NavbarItems.map((item) => (
@@ -99,4 +104,3 @@ export const Navbar = () => {
     </div>
   );
 };
-  
