@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import firedepartment from "../assets/firedepartment.svg";
 import intergratedpartner from "../assets/intergratedpartner.svg";
 import individual from "../assets/individual.svg";
@@ -7,8 +9,7 @@ import whatsapp from "../assets/whatsapp.svg";
 import instagram from "../assets/instagram.svg";
 import gmail from "../assets/gmail.svg";
 import x from "../assets/x.svg";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 export const LoginCard = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -16,8 +17,12 @@ export const LoginCard = () => {
   const [selected, setSelected] = useState(null);
 
   const navigatemap = () => {
-    if (!email && !password) {
+    if (!email ||  !password) {
       alert("Please fill all the fields");
+      return;
+    }
+    if (!selected){
+      alert("Please select the authority");
       return;
     }
     navigate("/map");
@@ -27,66 +32,51 @@ export const LoginCard = () => {
     setSelected(option);
   };
 
+  const options = [
+    { id: "firedepartment", image: firedepartment, label: "Fire Department" },
+    {
+      id: "intergratedpartner",
+      image: intergratedpartner,
+      label: "Integrated Partner",
+    },
+    { id: "individual", image: individual, label: "Individual" },
+  ];
+
   return (
     <div className="bg-white p-4 w-fit shadow-2xl rounded-3xl">
-      <div className="text-2xl">
+      <div className="text-2xl p-2">
         Hello, <span className="text-red-600">Welcome</span>
       </div>
-      <div className="grid px-3 my-4">
+      <div className="grid px-2 my-4">
         <div className="grid grid-cols-3 text-sm gap-3">
-          <div
-            className={`grid justify-center gap-2 cursor-pointer ${
-              selected === "firedepartment" ? "border-black" : "border-gray-50"
-            }`}
-            onClick={() => handleSelect("firedepartment")}
-          >
+          {options.map((option) => (
             <div
-              className={`border-2 w-fit rounded-full ml-2 ${
-                selected === "firedepartment"
-                  ? "border-black shadow-xl"
-                  : "border-gray-200"
+              key={option.id}
+              className={`grid justify-center gap-2 cursor-pointer ${
+                selected === option.id ? "border-black" : "border-gray-50"
               }`}
+              onClick={() => handleSelect(option.id)}
             >
-              <img src={firedepartment} alt="Fire Department" />
+              <div
+                className={`border-2 w-20 h-20 ${
+                  option.label === "Integrated Partner" ? "md:ml-4 " : "md:ml-0"
+                } flex items-center justify-center rounded-full ${
+                  selected === option.id
+                    ? "border-black shadow-xl"
+                    : "border-gray-200"
+                }`}
+              >
+                <img
+                  src={option.image}
+                  alt={option.label}
+                  className="max-w-full max-h-full p-2"
+                />
+              </div>
+              <div className="flex items-center justify-center text-center">
+                {option.label}
+              </div>
             </div>
-            <div className="flex items-center justify-center">Fire Department</div>
-          </div>
-
-          <div
-            className={`grid justify-center gap-2 cursor-pointer ${
-              selected === "intergratedpartner"
-                ? "border-black "
-                : "border-gray-200"
-            }`}
-            onClick={() => handleSelect("intergratedpartner")}
-          >
-            <div
-              className={`border-2 w-fit p-2 rounded-full ml-4 ${
-                selected === "intergratedpartner"
-                  ? "border-black shadow-xl"
-                  : "border-gray-200"
-              }`}
-            >
-              <img src={intergratedpartner} alt="Integrated Partner" />
-            </div>
-            <div className="flex items-center  justify-center">Integrated Partner</div>
-          </div>
-
-          <div
-            className={`grid justify-center gap-2 cursor-pointer  ${
-              selected === "individual" ? "border-black" : "border-gray-200"
-            }`}
-            onClick={() => handleSelect("individual")}
-          >
-            <div
-              className={` flex justify-center border-2 w-fit px-3 md:p-2  rounded-full ml-2 ${
-                selected === "individual" ? "border-black shadow-xl" : "border-gray-200"
-              }`}
-            >
-              <img src={individual} alt="Individual" />
-            </div>
-            <div className="flex items-center justify-center">Individual</div>
-          </div>
+          ))}
         </div>
         <div className="my-4">
           {" "}
@@ -100,7 +90,7 @@ export const LoginCard = () => {
                 placeholder="Email"
                 type="text"
                 onChange={(e) => {
-                  setEmail(e);
+                  setEmail(e.target.value);
                 }}
               ></input>
             </div>
@@ -114,12 +104,12 @@ export const LoginCard = () => {
                 type="password"
                 placeholder="Password"
                 onChange={(e) => {
-                  setPassword(e);
+                  setPassword(e.target.value);
                 }}
               ></input>
             </div>
-            <div className="grid gap-6">
-              <div className="flex justify-end mt-2 cursor-pointer">
+            <div className="grid gap-4">
+              <div className="flex justify-end  cursor-pointer text-sm">
                 Forgot password ?
               </div>
 
