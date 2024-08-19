@@ -13,6 +13,7 @@ import vasaivirar from "../assets/vasaivirar.svg";
 export const Map = () => {
   const [showRecent, setShowRecent] = useState(false);
   const [map, setMap] = useState(mapbg);
+  const [searchCard, setSearchCard] = useState(true);
 
   const recentSearches = [
     "Madhuban Society",
@@ -28,18 +29,18 @@ export const Map = () => {
 
   return (
     <div
-      className="bg-cover bg-center h-screen w-screen p-4 md:relative "
+      className="bg-cover bg-center h-screen w-screen p-4 md:relative"
       style={{ backgroundImage: `url(${map})` }}
     >
       <div className="md:absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-md">
         Vasai-Virar Fire Department
       </div>
 
-      <div className="p-6 flex mt-10 md:mt-0">
-        <div className="bg-white p-6 w-80 shadow-2xl rounded-3xl space-y-4">
+      <div className="p-6 flex mt-10 md:mt-0 relative">
+        <div className={`bg-white p-6 w-80 shadow-2xl rounded-3xl space-y-4 transition-all duration-300 ${searchCard ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}>
           <div className="text-2xl font-medium">Hello, Firefighter</div>
           <div className="space-y-4">
-            <div className="border-2 flex p-2 rounded-2xl  ">
+            <div className="border-2 flex p-2 rounded-2xl">
               <input
                 className="flex-grow border-none outline-none text-lg"
                 placeholder="Search"
@@ -80,8 +81,8 @@ export const Map = () => {
             >
               <div className="flex w-full justify-between">
                 <div className="flex">Vasai-Virar</div>
-                <div className="flex">
-                  31° <img src={cloudimg} className="h-6 w-6" alt="Cloud" />
+                <div className="flex items-center">
+                  31° <img src={cloudimg} className="h-6 w-6 ml-1" alt="Cloud" />
                 </div>
               </div>
 
@@ -133,9 +134,21 @@ export const Map = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center flex-col cursor-pointer">
-          <div className="bg-black w-fit h-fit py-4 rounded">
-            <img src={down} className="h-4 w-4" alt="Down arrow" />
+        <div 
+          className={`absolute cursor-pointer transition-all duration-300 ${
+            searchCard ? 'left-[334px] md:left-[344px]' : 'left-[-15px]'
+          }`}
+          style={{top: '50%', transform: 'translateY(-50%)'}}
+        >
+          <div 
+            className="bg-black w-fit h-fit py-4 rounded" 
+            onClick={() => setSearchCard(!searchCard)}
+          >
+            <img 
+              src={down} 
+              className={`h-4 w-4 transition-transform ${searchCard ? '' : 'rotate-180'}`} 
+              alt="Toggle search card" 
+            />
           </div>
         </div>
       </div>
