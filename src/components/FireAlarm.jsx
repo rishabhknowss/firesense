@@ -2,7 +2,7 @@ export const FireAlarm = () => {
   return (
     <div className="flex justify-center">
       <div>
-        <div className=" bg-white border-2  border-gray-200 rounded-xl py-4 px-2 w-fit">
+        <div className=" bg-white border-2  border-gray-200 rounded-xl py-4 px-2">
           <div className="grid gap-5">
             <div className="flex justify-center">Fire Alarm Panel</div>
             <div className="grid grid-cols-3 py-4 px-2">

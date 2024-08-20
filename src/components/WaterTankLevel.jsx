@@ -2,9 +2,11 @@ import rooftop from "../assets/rooftop.svg";
 export const WaterTankLevel = () => {
   return (
     <div>
-      <div className="bg-white border-2 border-gray-200 rounded-xl py-4 px-10 w-fit ">
+      <div className="bg-white border-2 border-gray-200 rounded-xl py-4 px-10">
         <div className="flex justify-center ">
-          <div className="flex flex-col justify-center text-lg">Water Tank Level</div>
+          <div className="flex flex-col justify-center text-lg">
+            Water Tank Level
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3  ">

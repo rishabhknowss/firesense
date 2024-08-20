@@ -1,8 +1,8 @@
 import education from "../assets/education.svg";
 export const LocationDashboard = () => {
   return (
-    <div >
-      <div className="bg-white border-2 rounded-xl shadow-xl w-fit  py-5  ">
+    <div>
+      <div className="bg-white border-2 rounded-xl shadow-xl  py-5  ">
         <div className="flex space-x-6">
           <div className=" bg-red-600 text-white px-6 py-2 rounded-r-lg shadow-md text-sm">
             Vasai-Virar Fire Department
