@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Speedometer } from "../components/Speedometer";
-import MotorControlCentrePanel from "../components/MotorControlPanel";
+import MotorControlPanel from "../components/MotorControlPanel";
 import { LocationDashboard } from "../components/LocationDashboard";
 import { HealthStatus } from "../components/HealthStatus";
 import { WaterTankLevel } from "../components/WaterTankLevel";
@@ -9,32 +9,30 @@ import { FireAlarm } from "../components/FireAlarm";
 
 export const Dashboard = () => {
   return (
-    <div className="bg-slate-100 h-full p-4">
-     <div className="grid grid-cols-6">
-      <div className="col-span-4 px-4">
-        
-          <div className="grid " >
-            <div className="grid grid-cols-2 gap-6">
-              <LocationDashboard />
-              <HealthStatus />
-            </div>
-            <div className="grid grid-cols-2">
-              <WaterTankLevel />
-              <FireAlarm />
-            </div>
-
-          </div>
-          <div className="">
-            <MotorControlCentrePanel />
-          
+    <div className="bg-slate-100 p-4">
+      <div className="grid grid-cols-5 gap-4 justify-items-stretch">
+        <div className="col-span-2 justify-self-stretch">
+          <LocationDashboard />
+        </div>
+        <div className="col-span-1">
+          <HealthStatus />
+        </div>
+        <div className="col-span-2 row-span-4">
+          <Speedometer />
         </div>
 
-      </div>
-      <div className="col-span-2">
-        <Speedometer />
-      </div>
+        <div className="col-span-2 justify-self-stretch">
+          <WaterTankLevel />
+        </div>
 
-     </div>
+        <div className="col-span-1">
+          <FireAlarm />
+        </div>
+
+        <div className="col-span-3 row-span-2">
+          <MotorControlPanel />
+        </div>
+      </div>
     </div>
   );
 };
