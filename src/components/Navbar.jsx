@@ -3,7 +3,8 @@ import logo from "../assets/logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
-const NavbarItems = [
+// Define Navbar items for general routes
+const GeneralNavbarItems = [
   {
     label: "Home",
     route: "/",
@@ -18,11 +19,28 @@ const NavbarItems = [
   },
 ];
 
+// Define Navbar items for the dashboard route
+const DashboardNavbarItems = [
+  {
+    label: "Dashboard",
+    route: "/dashboard",
+  },
+  {
+    label: "AMC",
+    route: "/dashboard/AMC",
+  }
+];
+
 export const Navbar = () => {
   const [active, setActive] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Determine which Navbar items to display based on the current route
+  const NavbarItems = location.pathname.startsWith("/dashboard")
+    ? DashboardNavbarItems
+    : GeneralNavbarItems;
 
   useEffect(() => {
     const currentRoute = location.pathname;
@@ -32,7 +50,7 @@ export const Navbar = () => {
     } else {
       setActive("");
     }
-  }, [location.pathname]);
+  }, [location.pathname, NavbarItems]);
 
   const handler = (item) => {
     setActive(item);
@@ -44,7 +62,7 @@ export const Navbar = () => {
   return (
     <div className="flex justify-between items-center p-4 md:p-6 text-md">
       {/* Logo with increased size */}
-      <img src={logo} alt="logo"  />  {/* Adjusted height */}
+      <img src={logo} alt="logo" />
 
       {/* Navbar Items */}
       <div className="hidden md:flex space-x-8 flex-grow justify-center">
@@ -62,11 +80,13 @@ export const Navbar = () => {
       </div>
 
       {/* Contact Us button */}
-      <div className="hidden md:flex cursor-pointer">
-        <div className="border px-4 py-2 rounded-xl text-white bg-black text-md">
-          Contact Us
+     
+        <div className="hidden md:flex cursor-pointer">
+          <div className="border px-4 py-2 rounded-xl text-white bg-black text-md">
+            Contact Us
+          </div>
         </div>
-      </div>
+      
 
       {/* Mobile Menu Icon */}
       <div className="md:hidden flex items-center">
@@ -93,12 +113,14 @@ export const Navbar = () => {
               {item.label}
             </div>
           ))}
-          <div
-            onClick={() => handler("Contact Us")}
-            className="border px-4 py-2 rounded-xl text-white bg-black text-md cursor-pointer"
-          >
-            Contact Us
-          </div>
+          {location.pathname !== "/dashboard" && (
+            <div
+              onClick={() => handler("Contact Us")}
+              className="border px-4 py-2 rounded-xl text-white bg-black text-md cursor-pointer"
+            >
+              Contact Us
+            </div>
+          )}
         </div>
       )}
     </div>

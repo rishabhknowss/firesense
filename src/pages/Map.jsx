@@ -9,6 +9,7 @@ import gmail from "../assets/gmail.svg";
 import x from "../assets/x.svg";
 import down from "../assets/down.svg";
 import vasaivirar from "../assets/vasaivirar.svg";
+import { useNavigate } from "react-router-dom";
 
 export const Map = () => {
   const [showRecent, setShowRecent] = useState(false);
@@ -27,12 +28,14 @@ export const Map = () => {
     setMap(vasaivirar);
   };
 
+  const navigate = useNavigate()
+
   return (
     <div
       className="bg-cover bg-center h-screen w-screen p-4 md:relative"
       style={{ backgroundImage: `url(${map})` }}
     >
-      <div className="md:absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-md">
+      <div className="md:absolute top-4 right-4 bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg shadow-md " >
         Vasai-Virar Fire Department
       </div>
 
@@ -51,7 +54,7 @@ export const Map = () => {
                 src={search}
                 className="h-5 w-5 cursor-pointer"
                 alt="Search"
-                onClick={() => setShowRecent(!showRecent)}
+                onClick={() => changemap()}
               />
             </div>
             {showRecent && (
@@ -77,7 +80,7 @@ export const Map = () => {
             )}
             <div
               className="grid gap-2 rounded-lg items-center border-2 p-3 cursor-pointer"
-              onClick={changemap}
+              onClick={()=>navigate('/dashboard')}
             >
               <div className="flex w-full justify-between">
                 <div className="flex">Vasai-Virar</div>
