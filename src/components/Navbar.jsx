@@ -28,7 +28,7 @@ const DashboardNavbarItems = [
   {
     label: "AMC",
     route: "/dashboard/AMC",
-  }
+  },
 ];
 
 export const Navbar = () => {
@@ -44,9 +44,9 @@ export const Navbar = () => {
 
   useEffect(() => {
     const currentRoute = location.pathname;
-    const active = NavbarItems.find((item) => item.route === currentRoute);
-    if (active) {
-      setActive(active.label);
+    const activeItem = NavbarItems.find((item) => currentRoute.startsWith(item.route));
+    if (activeItem) {
+      setActive(activeItem.label);
     } else {
       setActive("");
     }
@@ -55,14 +55,25 @@ export const Navbar = () => {
   const handler = (item) => {
     setActive(item);
     const route = NavbarItems.find((i) => i.label === item);
-    navigate(route.route);
-    setIsMenuOpen(false); // Close the menu when an item is selected
+    if (route) {
+      navigate(route.route, { state: { 
+        role: location.state?.role || 'defaultRole',
+        user: location.state?.user || {},
+        relationships: location.state?.relationships || {},
+        selectedIndividual: location.state?.selectedIndividual || null 
+      }});
+      setIsMenuOpen(false); // Close the menu when an item is selected
+    }
   };
 
   return (
     <div className="flex justify-between items-center p-4 md:p-6 text-md">
-      
-      <img src={logo} alt="logo" className="cursor-pointer" onClick={()=>navigate('/')} />
+      <img
+        src={logo}
+        alt="logo"
+        className="cursor-pointer"
+        onClick={() => navigate('/')}
+      />
 
       {/* Navbar Items */}
       <div className="hidden md:flex space-x-8 flex-grow justify-center">
@@ -80,13 +91,14 @@ export const Navbar = () => {
       </div>
 
       {/* Contact Us button */}
-     
-        <div className="hidden md:flex cursor-pointer">
-          <div className="border px-4 py-2 rounded-xl text-white bg-black text-md">
-            Contact Us
-          </div>
+      <div className="hidden md:flex cursor-pointer">
+        <div
+          onClick={() => navigate('/contact')}
+          className="border px-4 py-2 rounded-xl text-white bg-black text-md"
+        >
+          Contact Us
         </div>
-      
+      </div>
 
       {/* Mobile Menu Icon */}
       <div className="md:hidden flex items-center">
@@ -113,14 +125,12 @@ export const Navbar = () => {
               {item.label}
             </div>
           ))}
-          {location.pathname !== "/dashboard" && (
-            <div
-              onClick={() => handler("Contact Us")}
-              className="border px-4 py-2 rounded-xl text-white bg-black text-md cursor-pointer"
-            >
-              Contact Us
-            </div>
-          )}
+          <div
+            onClick={() => navigate('/contact')}
+            className="border px-4 py-2 rounded-xl text-white bg-black text-md cursor-pointer"
+          >
+            Contact Us
+          </div>
         </div>
       )}
     </div>

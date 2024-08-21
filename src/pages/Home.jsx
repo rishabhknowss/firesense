@@ -3,9 +3,12 @@ import map from "../assets/map.svg";
 import flame from "/flame.png";
 
 import { LoginCard } from "../components/LoginCard";
+import { Navbar } from "../components/Navbar";
 
 export const Home = () => {
-  return (
+  return ( 
+    <div>
+    <Navbar />
     <div className="bg-slate-100 h-screen">
       <div className="grid md:grid-cols-2 p-2 md:p-6 md:gap-4 px-4 md:">
         <div className="flex flex-col md:relative">
@@ -22,7 +25,7 @@ export const Home = () => {
               <img src={flame} alt="Flame" className="w-12 md:w-24" />
             </div>
           </div>
-          <div className="absolute w-[900px]  h-full ml-20 inset-0 flex items-center justify-center mt-10 invisible md:visible">
+          <div className="absolute w-full  h-full ml-20 inset-0 flex items-center justify-center mt-10 invisible md:visible">
             <img
               src={map}
               alt="Coverage map"
@@ -36,5 +39,6 @@ export const Home = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };

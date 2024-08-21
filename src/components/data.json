@@ -1,0 +1,259 @@
+{
+  "fireDepartments": [
+    {
+      "id": "FD001",
+      "name": "Mumbai Fire Services",
+      "email": "mumbai@fireservices.com",
+      "password": "123",
+      "integratedPartners": [
+        {
+          "id": "IP001",
+          "name": "SafeGuard Solutions",
+          "email": "safeguard@solutions.com",
+          "password": "123",
+          "individuals": [
+            {
+              "id": "IND001",
+              "name": "Sunshine Healthcare",
+              "type": "Hospital",
+              "email": "sunshine@healthcare.com",
+              "password": "123"
+            },
+            {
+              "id": "IND002",
+              "name": "Seaside Residency",
+              "type": "Residential Building",
+              "email": "seaside@residency.com",
+              "password": "123"
+            },
+            {
+              "id": "IND003",
+              "name": "Western College of Arts",
+              "type": "College",
+              "email": "western@college.com",
+              "password": "123"
+            },
+            {
+              "id": "IND004",
+              "name": "Bright Future School",
+              "type": "School",
+              "email": "brightfuture@school.com",
+              "password": "123"
+            },
+            {
+              "id": "IND005",
+              "name": "City Care Hospital",
+              "type": "Hospital",
+              "email": "citycare@hospital.com",
+              "password": "123"
+            }
+          ]
+        },
+        {
+          "id": "IP002",
+          "name": "FireSecure Technologies",
+          "email": "firesecure@technologies.com",
+          "password": "123",
+          "individuals": [
+            {
+              "id": "IND006",
+              "name": "Palm Springs Apartments",
+              "type": "Residential Building",
+              "email": "palmsprings@apartments.com",
+              "password": "123"
+            },
+            {
+              "id": "IND007",
+              "name": "Mumbai Institute of Technology",
+              "type": "College",
+              "email": "mit@college.com",
+              "password": "123"
+            },
+            {
+              "id": "IND008",
+              "name": "Gyan Mandir High School",
+              "type": "School",
+              "email": "gyanmandir@school.com",
+              "password": "123"
+            },
+            {
+              "id": "IND009",
+              "name": "Healing Hands Medical Center",
+              "type": "Hospital",
+              "email": "healinghands@medical.com",
+              "password": "123"
+            },
+            {
+              "id": "IND010",
+              "name": "Emerald Heights",
+              "type": "Residential Building",
+              "email": "emeraldheights@residency.com",
+              "password": "123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FD002",
+      "name": "Delhi Fire Service",
+      "email": "delhi@fireservice.com",
+      "password": "123",
+      "integratedPartners": [
+        {
+          "id": "IP003",
+          "name": "BlazeShield Enterprises",
+          "email": "blazeshield@enterprises.com",
+          "password": "123",
+          "individuals": [
+            {
+              "id": "IND011",
+              "name": "Delhi School of Economics",
+              "type": "College",
+              "email": "dse@college.com",
+              "password": "123"
+            },
+            {
+              "id": "IND012",
+              "name": "New Hope Hospital",
+              "type": "Hospital",
+              "email": "newhope@hospital.com",
+              "password": "123"
+            },
+            {
+              "id": "IND013",
+              "name": "Lotus Gardens",
+              "type": "Residential Building",
+              "email": "lotusgardens@residency.com",
+              "password": "123"
+            },
+            {
+              "id": "IND014",
+              "name": "Future Leaders Academy",
+              "type": "School",
+              "email": "futureleaders@school.com",
+              "password": "123"
+            },
+            {
+              "id": "IND015",
+              "name": "Delhi College of Engineering",
+              "type": "College",
+              "email": "dce@college.com",
+              "password": "123"
+            }
+          ]
+        },
+        {
+          "id": "IP004",
+          "name": "SafeGuard Solutions",
+          "email": "safeguard@solutions.com",
+          "password": "123",
+          "individuals": [
+            {
+              "id": "IND016",
+              "name": "Maple Woods",
+              "type": "Residential Building",
+              "email": "maplewoods@residency.com",
+              "password": "123"
+            },
+            {
+              "id": "IND017",
+              "name": "Bright Minds School",
+              "type": "School",
+              "email": "brightminds@school.com",
+              "password": "123"
+            },
+            {
+              "id": "IND018",
+              "name": "Metro Health Center",
+              "type": "Hospital",
+              "email": "metrohealth@hospital.com",
+              "password": "123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FD003",
+      "name": "Bangalore Fire and Emergency Services",
+      "email": "bangalore@fireservices.com",
+      "password": "123",
+      "integratedPartners": [
+        {
+          "id": "IP005",
+          "name": "BlazeShield Enterprises",
+          "email": "blazeshield@enterprises.com",
+          "password": "123",
+          "individuals": [
+            {
+              "id": "IND019",
+              "name": "Silver Oaks Residency",
+              "type": "Residential Building",
+              "email": "silveroaks@residency.com",
+              "password": "123"
+            },
+            {
+              "id": "IND020",
+              "name": "Bangalore Institute of Science",
+              "type": "College",
+              "email": "bis@college.com",
+              "password": "123"
+            },
+            {
+              "id": "IND021",
+              "name": "Innovative Learning Academy",
+              "type": "School",
+              "email": "ila@school.com",
+              "password": "123"
+            },
+            {
+              "id": "IND022",
+              "name": "LifeCare Medical Center",
+              "type": "Hospital",
+              "email": "lifecare@medical.com",
+              "password": "123"
+            },
+            {
+              "id": "IND023",
+              "name": "Green Meadows",
+              "type": "Residential Building",
+              "email": "greenmeadows@residency.com",
+              "password": "123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FD004",
+      "name": "Chennai Fire and Rescue Services",
+      "email": "chennai@fireservices.com",
+      "password": "123",
+      "integratedPartners": [
+        {
+          "id": "IP006",
+          "name": "FireSecure Technologies",
+          "email": "firesecure@technologies.com",
+          "password": "123",
+          "individuals": [
+            {
+              "id": "IND024",
+              "name": "Chennai Scholars Academy",
+              "type": "School",
+              "email": "scholars@school.com",
+              "password": "123"
+            },
+            {
+              "id": "IND025",
+              "name": "Chennai Institute of Technology",
+              "type": "College",
+              "email": "cit@college.com",
+              "password": "123"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

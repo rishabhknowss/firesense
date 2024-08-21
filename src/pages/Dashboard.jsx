@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import { Speedometer } from "../components/Speedometer";
 import MotorControlPanel from "../components/MotorControlPanel";
@@ -6,13 +7,24 @@ import { LocationDashboard } from "../components/LocationDashboard";
 import { HealthStatus } from "../components/HealthStatus";
 import { WaterTankLevel } from "../components/WaterTankLevel";
 import { FireAlarm } from "../components/FireAlarm";
+import { Navbar } from "../components/Navbar";
 
 export const Dashboard = () => {
+  const location = useLocation();
+  const { role, user, relationships, selectedIndividual } = location.state;
+
   return (
+    <div>
+      <Navbar />
     <div className="bg-slate-100 p-4">
       <div className="grid grid-cols-5 gap-4 justify-items-stretch">
         <div className="col-span-2 justify-self-stretch">
-          <LocationDashboard />
+          <LocationDashboard 
+            role={role} 
+            user={user} 
+            relationships={relationships} 
+            selectedIndividual={selectedIndividual}
+          />
         </div>
         <div className="col-span-1">
           <HealthStatus />
@@ -34,5 +46,8 @@ export const Dashboard = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
+
+export default Dashboard;
