@@ -17,14 +17,16 @@ export const Home = () => {
                 <img src={redline} alt="Red underline" className="w-24 md:w-full" />
               </span>
             </div>
-          <div className="flex"> <div className="flex flex-col justify-center ">Empowering People </div>
-           <img src={flame} alt="Flame" className="w-12 md:w-24" /></div>
+            <div className="flex">
+              <div className="flex flex-col justify-center ">Empowering People </div>
+              <img src={flame} alt="Flame" className="w-12 md:w-24" />
+            </div>
           </div>
-          <div className="absolute w-full h-full ml-20 inset-0 flex items-center justify-center mt-3  invisible  md:visible">
-            <img 
-              src={map} 
-              alt="Coverage map" 
-              className="w-full object-fit "
+          <div className="absolute w-[900px]  h-full ml-20 inset-0 flex items-center justify-center mt-10 invisible md:visible">
+            <img
+              src={map}
+              alt="Coverage map"
+              className="w-full md:w-[900px] object-fit"
             />
           </div>
         </div>
