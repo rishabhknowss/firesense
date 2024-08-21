@@ -9,7 +9,7 @@ export const WaterTankLevel = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3  ">
+        <div className="grid grid-cols-2 gap-28 ">
           <div className="flex">
             <div className="py-4 pr-4 flex">
               <img src={rooftop} className="h-8 w-8" alt="Rooftop tank" />

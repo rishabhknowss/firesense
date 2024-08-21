@@ -9,7 +9,7 @@ export const LocationDashboard = () => {
           </div>
           <div className="flex flex-col justify-center text-xl ">TFPC.LLP</div>
         </div>
-        <div className="flex px-8 ">
+        <div className="flex px-8  ">
           <div className="p-1 flex">
             <div className="grid ">
               <div className="ml-2 border-2 rounded-full shadow-md w-fit p-2">
@@ -21,7 +21,7 @@ export const LocationDashboard = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center text-lg px-6">
-            St. Gonsalo Garcia College <span>of Arts and Commerce</span>
+            St. Gonsalo Garcia College of Arts and Commerce
           </div>
         </div>
       </div>

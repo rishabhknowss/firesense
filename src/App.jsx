@@ -8,15 +8,16 @@ import { Dashboard } from "./pages/Dashboard";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </BrowserRouter>
+    <BrowserRouter >
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/about" element={<AboutUs />} />
+      <Route path="/map" element={<Map />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  </BrowserRouter>
+  
   );
 }

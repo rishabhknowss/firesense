@@ -63,13 +63,13 @@ export const Speedometer = () => {
               <div className="flex justify-between items-center mb-2 text-gray-600">
                 <span>Main Pump</span>
                 <span
-                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                  className={`inline-flex  items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                     metrics.mainPump
                       ? "bg-green-100 text-green-800"
                       : "bg-red-100 text-red-800"
                   }`}
                 >
-                  {metrics.mainPump ? "ON" : "OFF"}
+                 {metrics.mainPump ? "ON" : "OFF"}
                 </span>
               </div>
               <div className="flex justify-between items-center mb-2 text-gray-600">
