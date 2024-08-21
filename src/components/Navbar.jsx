@@ -61,8 +61,8 @@ export const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center p-4 md:p-6 text-md">
-      {/* Logo with increased size */}
-      <img src={logo} alt="logo" />
+      
+      <img src={logo} alt="logo" className="cursor-pointer" onClick={()=>navigate('/')} />
 
       {/* Navbar Items */}
       <div className="hidden md:flex space-x-8 flex-grow justify-center">

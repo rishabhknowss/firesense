@@ -36,7 +36,7 @@ export const AmcTab = () => {
   };
 
   return (
-    <div className="bg-slate-50 h-screen px-10 py-4">
+    <div className="bg-slate-50 h-screen px-10 py-4" >
       <div className="grid grid-cols-5 gap-4">
         <div className="col-span-2" >
           <LocationDashboard />
@@ -48,7 +48,7 @@ export const AmcTab = () => {
           <DownloadCard onDownload={handleDownload} />
         </div>
       </div>
-      <div ref={amcItemsRef}>
+      <div ref={amcItemsRef} >
         <AMCItems />
       </div>
     </div>
