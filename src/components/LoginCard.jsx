@@ -118,7 +118,7 @@ export const LoginCard = () => {
             >
               <div
                 className={`border-2 w-20 h-20 ${
-                  option.label === "Integrated Partner" ? "md:ml-4 " : "md:ml-0"
+                  option.label === "Integrated Partner" || option.label === "Fire Department" ? "md:ml-4 " : "md:ml-0"
                 } flex items-center justify-center rounded-full ${
                   selected === option.id
                     ? "border-black shadow-xl"

@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
 
 export const Departments = () => {
   const location = useLocation();
@@ -56,8 +55,7 @@ export const Departments = () => {
 
   return (
     <div>
-      <Navbar />
-      
+    
       <div className="p-4 px-24 flex justify-center">
         <div className="justify-center border-2 rounded-xl h-fit grid w-[900px]">
           <div>
@@ -90,7 +88,7 @@ export const Departments = () => {
               clients.map((individual, index) => (
                 <div
                   key={index}
-                  className="border mt-4 gap-2 w-fit py-3 cursor-pointer px-6 rounded-xl transition-colors duration-300 hover:bg-black hover:text-white"
+                  className="border m-5 gap-2 w-fit  py-3 cursor-pointer px-6 rounded-xl transition-colors duration-300 hover:bg-black hover:text-white"
                   onClick={() => handleIndividualClick(individual)}
                 >
                   {individual.name}

@@ -47,7 +47,7 @@ export const AmcTab = () => {
 
   return (
     <div>
-      <Navbar />
+     
     <div className="bg-slate-50 h-screen px-10 py-4" >
       <div className="grid grid-cols-5 gap-4">
         <div className="col-span-2" >

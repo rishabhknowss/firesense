@@ -12,26 +12,37 @@ const phases = ['R Phase', 'Y Phase', 'B Phase'];
 const SpeedometerGroup = ({ phase }) => (
   <div className="p-3 rounded-lg space-y-6 border">
     <h2 className="text-center mb-2 text-sm">{phase}</h2>
-    {metrics.map((metric, index) => (
-      <div key={index} className="flex justify-center items-center">
-        <ReactSpeedometer
-          value={Math.random() * (metric.max - metric.min) + metric.min}
-          minValue={metric.min}
-          maxValue={metric.max}
-          currentValueText={metric.unit}
-          segments={5}
-          segmentColors={["#FF0000", "#fb8500", "#FFFF00", "#70e000", "#38b000"]}
-          width={110}
-          height={80}
-          ringWidth={10}
-          needleHeightRatio={0.5}
-          needleColor="#333"
-          textColor="#333"
-          valueTextFontSize="8px"
-          labelFontSize="7px"
-        />
-      </div>
-    ))}
+    {metrics.map((metric, index) => {
+      let value;
+      if (metric.name === 'Voltage') {
+        value = Math.random() * (240 - 230) + 230;
+      } else if (metric.name === 'Current') {
+        value = 0;
+      } else if (metric.name === 'Frequency') {
+        value = 50;
+      }
+      
+      return (
+        <div key={index} className="flex justify-center items-center">
+          <ReactSpeedometer
+            value={value}
+            minValue={metric.min}
+            maxValue={metric.max}
+            currentValueText={metric.unit}
+            segments={5}
+            segmentColors={["#FF0000", "#fb8500", "#FFFF00", "#70e000", "#38b000"]}
+            width={110}
+            height={80}
+            ringWidth={10}
+            needleHeightRatio={0.5}
+            needleColor="#333"
+            textColor="#333"
+            valueTextFontSize="8px"
+            labelFontSize="7px"
+          />
+        </div>
+      );
+    })}
   </div>
 );
 

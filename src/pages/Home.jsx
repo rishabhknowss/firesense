@@ -3,12 +3,11 @@ import map from "../assets/map.svg";
 import flame from "/flame.png";
 
 import { LoginCard } from "../components/LoginCard";
-import { Navbar } from "../components/Navbar";
 
 export const Home = () => {
   return ( 
     <div>
-    <Navbar />
+   
     <div className="bg-slate-100 h-screen">
       <div className="grid md:grid-cols-2 p-2 md:p-6 md:gap-4 px-4 md:">
         <div className="flex flex-col md:relative">

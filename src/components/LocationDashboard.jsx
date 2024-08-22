@@ -1,10 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import education from "../assets/education.svg";
+import { MdLocalHospital } from "react-icons/md";
+import { FaHotel } from "react-icons/fa6";
 
 export const LocationDashboard = () => {
   const location = useLocation();
-  const { role, user, relationships, selectedIndividual } = location.state || {};
+  const { role, user, relationships, selectedIndividual } =
+    location.state || {};
 
   console.log("Location state:", location.state);
 
@@ -18,15 +21,22 @@ export const LocationDashboard = () => {
 
   if (role === "Fire Department") {
     fireDepartmentName = user.name;
-    integratedPartnerName = relationships.integratedPartners.find(partner => 
-      partner.individuals.some(ind => ind.name === selectedIndividual.name)
-    )?.name || "Integrated Partner Name";
-    client = relationships.integratedPartners.flatMap(partner => partner.individuals)
-      .find(individual => individual.name === selectedIndividual.name) || {};
+    integratedPartnerName =
+      relationships.integratedPartners.find((partner) =>
+        partner.individuals.some((ind) => ind.name === selectedIndividual.name)
+      )?.name || "Integrated Partner Name";
+    client =
+      relationships.integratedPartners
+        .flatMap((partner) => partner.individuals)
+        .find((individual) => individual.name === selectedIndividual.name) ||
+      {};
   } else if (role === "Integrated Partner") {
     fireDepartmentName = relationships.fireDepartment;
     integratedPartnerName = user.name;
-    client = relationships.individuals.find(individual => individual.name === selectedIndividual.name) || {};
+    client =
+      relationships.individuals.find(
+        (individual) => individual.name === selectedIndividual.name
+      ) || {};
   } else if (role === "Individual") {
     fireDepartmentName = relationships.fireDepartment;
     integratedPartnerName = relationships.integratedPartner;
@@ -48,7 +58,15 @@ export const LocationDashboard = () => {
       <div className="flex px-8 mt-4">
         <div className="p-1 flex items-center space-x-2">
           <div className="border-2 rounded-full shadow-md w-fit p-2">
-            <img src={education} className="h-6 w-6" alt="Education icon" />
+            {client.type === "Hospital" ? (
+              <MdLocalHospital className="h-6 w-6" alt="Hospital icon" />
+            ) : client.type === "Residential Building" ? (
+              <FaHotel className="h-6 w-6" alt="Residential Building icon" />
+            ) : client.type === "College" || client.type === "School" ? (
+              <img src={education} className="h-6 w-6" alt="Education icon" />
+            ) : (
+              <DefaultIcon className="h-6 w-6" alt="Default icon" /> // Fallback for any other type
+            )}
           </div>
           <div className="text-gray-500 italic text-sm">
             {client.type || "Client Type"}

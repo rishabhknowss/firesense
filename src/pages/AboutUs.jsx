@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar";
 export const AboutUs = () => {
   return (
     <div>
-      <Navbar />
+      
       <div className="bg-slate-100 h-screen flex justify-center ">
         <div className="bg-white border-2 rounded-2xl shadow-xl p-8 mt-10 w-[750px] h-fit">
           <div className="flex flex-col items-center gap-4">

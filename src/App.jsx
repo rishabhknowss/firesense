@@ -11,6 +11,7 @@ import { Departments } from "./pages/Departments";
 export default function App() {
   return (
     <BrowserRouter>
+    <Navbar />
       
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,7 +20,6 @@ export default function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/map" element={<Map />} />
         <Route path="/departments" element={<Departments />} />
-        {/* Fixing the typo in the route path */}
         <Route path="/dashboard/AMC" element={<AmcTab />} />
       </Routes>
     </BrowserRouter>

@@ -66,7 +66,7 @@ export const Map = () => {
   }, []);
 
   return (
-    <div><Navbar />
+    <div>
     <div
       className="bg-cover bg-center h-screen w-screen p-4 md:relative"
       style={{ backgroundImage: `url(${map})` }}

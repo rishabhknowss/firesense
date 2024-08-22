@@ -15,7 +15,7 @@ export const Dashboard = () => {
 
   return (
     <div>
-      <Navbar />
+     
     <div className="bg-slate-100 p-4">
       <div className="grid grid-cols-5 gap-4 justify-items-stretch">
         <div className="col-span-2 justify-self-stretch">

@@ -4,25 +4,25 @@ export const Speedometer = () => {
   const metricsArray = [
     {
       label: "Fire Hydrant System",
-      pressure: 12,
+      pressure: 7,
       mainPump: true,
-      jockeyPump: false,
+      jockeyPump: true,
     },
     {
       label: "Fire Sprinkler System",
-      pressure: 10,
+      pressure: 5,
       mainPump: true,
       jockeyPump: true,
     },
     {
       label: "Standby System",
-      pressure: 4,
-      mainPump: false,
-      jockeyPump: false,
+      pressure: 10,
+      mainPump: true,
+      jockeyPump: true,
     },
     {
       label: "Fire Drencher System",
-      pressure: 6,
+      pressure: 7.5,
       mainPump: true,
       jockeyPump: true,
     },
@@ -69,7 +69,7 @@ export const Speedometer = () => {
                       : "bg-red-100 text-red-800"
                   }`}
                 >
-                 {metrics.mainPump ? "ON" : "OFF"}
+                 <span className="flex flex-col justify-center">{metrics.mainPump ? "ON" : "OFF"}</span>
                 </span>
               </div>
               <div className="flex justify-between items-center mb-2 text-gray-600">
